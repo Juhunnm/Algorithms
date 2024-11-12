@@ -1,14 +1,10 @@
 //접미사 배열
 function solution(my_string) {
     var answer = [];
-    
-    [...my_string].map((e,idx)=>{
-        answer.push(sx )
-    })
-    // answer.push(my_string.splice(3))
-    // console.log(my_string, "test")
-    
-    return answer;
+    for (let i = 0; i < my_string.length; i++) {
+        answer.push(my_string.slice(i, my_string.length))
+    }
+    return answer.sort()
 }
 
 console.log(solution("banana"))
