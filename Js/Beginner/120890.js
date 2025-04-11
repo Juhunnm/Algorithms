@@ -1,10 +1,14 @@
 function solution(array, n) {
-    var answer = 0;
-    array.push(n);
-    array.sort((a,b)=>a-b);
-    console.log(array[2])
-    
-    return answer;
-}
+    var answer = [];
+    return array.reduce((acc,cur) => {
+        let accDiff = Math.abs(acc-n);
+        let curDiff = Math.abs(cur-n);
 
-solution([3,10,28],20)
+        if(curDiff < accDiff || (curDiff === accDiff && cur < acc)){
+            return cur
+        }else{
+            return acc
+        }
+
+    })
+}
